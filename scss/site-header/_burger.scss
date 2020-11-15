@@ -1,0 +1,54 @@
+.burger {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  background-color: transparent;
+  margin: 0;
+  padding: 8px 5px;
+  border: none;
+  display: none;
+}
+
+.burger__top {
+  width: 44px;
+  height: 4px;
+  background-color: #fff;
+  margin-bottom: 5px;
+}
+
+.burger__center {
+  width: 34px;
+  height: 4px;
+  background-color: #fff;
+  margin-bottom: 5px;
+}
+
+.burger__bottom {
+  width: 24px;
+  height: 4px;
+  background-color: #fff;
+}
+
+@include breakpoint-down (768) {
+
+  .burger {
+     display: flex;
+  }
+
+  .burger--close .burger__top {
+    width: 35px;
+    margin-top: 15px;
+    transform: rotate(55deg);
+    transition: transform .3s ease;
+  }
+
+  .burger--close .burger__center {
+    display: none;
+  }
+
+  .burger--close .burger__bottom {
+    width: 35px;
+    transform: rotate(-55deg) translateY(-5px) translateX(7px);
+    transition: transform .3s ease;
+  }
+}
